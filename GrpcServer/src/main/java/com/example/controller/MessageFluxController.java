@@ -27,7 +27,6 @@ import java.util.Map;
 @Data
 public class MessageFluxController {
     //@Value("${rsocketoutput.file.path.upload}")
-
     @MessageMapping("message.upload")
     public Flux<UploadStatus> upload(@Headers Map<String,Object> metadata, @Payload Flux<DataBuffer> content) throws  Exception{
         long startTime = System.currentTimeMillis();

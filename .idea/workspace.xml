@@ -4,44 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53a1f3c1-452b-4ed4-a8ea-3a1c84a349b8" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/ClientApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/controller/PersonClientController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/entity/MyManagedChannel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/entity/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/service/ExtendResponseObserver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/service/FileGrpcService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/service/FileHttpService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/service/MyGrpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/service/MyGrpcService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/service/SpringBootMyGrpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/java/com/example/util/FileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcClient/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/MyGrpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/ServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/common/UploadConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/common/UploadStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/FileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/MessageFluxController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/PersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/entity/ConfigerBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/entity/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/service/FileOperateService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/service/HelloService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GrpcServer/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-grpc-lib/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-grpc-lib/src/main/proto/FileOptService.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-grpc-lib/src/main/proto/HiService.proto" afterDir="false" />
+    <list default="true" id="53a1f3c1-452b-4ed4-a8ea-3a1c84a349b8" name="变更" comment="demo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/MessageFluxController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/MessageFluxController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +148,14 @@
       <option name="presentableId" value="Default" />
       <updated>1652431219897</updated>
     </task>
+    <task id="LOCAL-00001" summary="demo">
+      <created>1652767937081</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652767937081</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,11 +163,27 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="demo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -216,7 +205,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/MessageFluxController.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -226,7 +215,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GrpcServer/src/main/java/com/example/controller/MessageFluxController.java</url>
-          <line>50</line>
+          <line>49</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
