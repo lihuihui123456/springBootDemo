@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package com.example.grpc;
+
+option java_multiple_files = true;
+
+//Upload
+message UploadFileRequest {
+  string FileName = 1;
+  bytes Content = 2;
+}
+
+message UploadFileResponse {
+  string FilePath = 1;
+}
+
+//Download
+message DownloadFileRequest {
+  string FilePath = 1;
+}
+
+message DownloadFileResponse {
+  bytes Content = 1;
+}
+
+service FileOperateService {
+  rpc uploadFile(UploadFileRequest) returns (UploadFileResponse);
+
+  rpc uploadFileStream(stream UploadFileRequest) returns (UploadFileResponse);
+
+  rpc downloadFile(DownloadFileRequest) returns ( DownloadFileResponse);
+
+  rpc downloadFileStream(DownloadFileRequest) returns ( stream DownloadFileResponse);
+
+}
