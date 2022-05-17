@@ -73,6 +73,7 @@ public class PersonClientController {
                         }).data(resourceFlux)).flatMapMany(r->r.retrieveFlux(UploadStatus.class))
 
                 .doOnNext(o-> System.out.println("上传进度:"+o));
+
         uploadStatusFlux.blockLast();
     }
 
