@@ -75,6 +75,7 @@ public class PersonClientController {
                 .doOnNext(o-> System.out.println("上传进度:"+o));
 
         uploadStatusFlux.blockLast();
+
     }
 
     }
