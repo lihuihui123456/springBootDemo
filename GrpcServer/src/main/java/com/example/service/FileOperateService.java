@@ -3,15 +3,20 @@ package com.example.service;
 import com.example.grpc.*;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.io.*;
 
 @GrpcService
 public class FileOperateService extends FileOperateServiceGrpc.FileOperateServiceImplBase{
 
+    @Value("${my.file.path}")
+    String myFilePath;
+
     @Override
     public void uploadFile(UploadFileRequest request, StreamObserver<UploadFileResponse> responseObserver){
         //System.out.println(String.format("收到文件%s长度%s", request.getName(), bytes.length));
-        String path="/Users/lizhenghui/tmp/"+ request.getFileName();
+        String path=myFilePath+ request.getFileName();
         File file = new File(path);
     /*    if (file.exists()) {
             file.delete();
@@ -34,7 +39,7 @@ public class FileOperateService extends FileOperateServiceGrpc.FileOperateServic
 
     @Override
     public StreamObserver<UploadFileRequest> uploadFileStream(StreamObserver<UploadFileResponse> responseObserver) {
-        String path="/Users/lizhenghui/tmp/"+ "myrrr.jpeg";
+        String path=myFilePath+ "uploadFileStream.zip";
         File file = new File(path);
         if (file.exists()) {
             file.delete();

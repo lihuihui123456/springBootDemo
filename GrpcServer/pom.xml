@@ -14,7 +14,6 @@
     <description>grpc demo</description>
 
     <dependencies>
-
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>grpc_lib</artifactId>

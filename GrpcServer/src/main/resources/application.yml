@@ -1,7 +1,7 @@
 grpc:
     server:
         port: 9898
-        maxMessageSize: 20194304
+        maxMessageSize: 33194304
 
 
 spring:
@@ -10,4 +10,4 @@ spring:
             port: 9899
 my:
   file:
-    path: "/Users/lizhenghui/tmp/"
+    path: "D://tmp/"

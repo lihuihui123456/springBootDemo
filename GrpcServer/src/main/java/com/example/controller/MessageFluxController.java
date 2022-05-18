@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.io.IOException;
 import java.nio.channels.AsynchronousFileChannel;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -26,11 +27,14 @@ import java.util.Map;
 @Slf4j
 @Data
 public class MessageFluxController {
-    //@Value("${rsocketoutput.file.path.upload}")
+
+    @Value("${my.file.path}")
+    String myFilePath;
+
     @MessageMapping("message.upload")
     public Flux<UploadStatus> upload(@Headers Map<String,Object> metadata, @Payload Flux<DataBuffer> content) throws  Exception{
         long startTime = System.currentTimeMillis();
-        Path outputPath = Paths.get("/Users/lizhenghui/tmp/");
+        Path outputPath = Paths.get(myFilePath);
         log.info("【上传后路径】outputPaht={}",outputPath);
         Object fileName = metadata.get(UploadConstants.FILE_NAME);
         Object fileExt = metadata.get(UploadConstants.MINE_FILE_EXTENSION);
@@ -41,7 +45,7 @@ public class MessageFluxController {
                 StandardOpenOption.CREATE, //文件创建
                 StandardOpenOption.WRITE  //文件写入
         );//异步文件通道
-        return Flux.concat(DataBufferUtils.write(content,channel)
+        return Flux.concat(DataBufferUtils.write(content,channel,4)
                         .map(s-> {
                             return UploadStatus.CHUNK_COMPLETED;
                         }),Mono.just(UploadStatus.COMPLETED))
@@ -49,10 +53,16 @@ public class MessageFluxController {
                     try {
                         long endTime = System.currentTimeMillis();
                         System.out.println("rsocket.uploadStream:耗时："+(endTime-startTime));
-                        channel.close();
                     }catch(Exception e){
                         e.printStackTrace();
+                    }finally {
+                        try {
+                            channel.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
+
                 })
                 .onErrorReturn(UploadStatus.FAILED);
 

@@ -1,6 +1,8 @@
 package com.example.controller;
+import lombok.Data;
 import net.minidev.json.JSONObject;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -11,14 +13,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@Data
 public class FileController {
+
+    @Value("${my.file.path}")
+    String myFilePath;
 
     @PostMapping("/httpFileUpload")
     public String uploadFile(HttpServletRequest request, HttpServletResponse response) throws Exception{
         String fileName = request.getParameter("fileName");
         System.out.println("filename:"+fileName);
-        String fileFullPath = "/Users/lizhenghui/tmp/";
-        String filePath= "/Users/lizhenghui/tmp/" + fileName;
+        String fileFullPath = myFilePath;
+        String filePath= myFilePath + fileName;
         InputStream input = null;
         FileOutputStream fos = null;
         try {
