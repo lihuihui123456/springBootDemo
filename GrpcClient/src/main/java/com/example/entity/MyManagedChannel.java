@@ -30,14 +30,14 @@ public class MyManagedChannel {
     private int prot;
 
     @Bean
-    public ManagedChannel myBean(){
-        return   ManagedChannelBuilder.forAddress(address, prot)
+    public ManagedChannel myBean() {
+        return ManagedChannelBuilder.forAddress(address, prot)
                 .usePlaintext()
                 .build();
     }
 
     @Bean
-    RSocketRequester rSocketRequester(){
+    RSocketRequester rSocketRequester() {
         RSocketStrategies strategies = RSocketStrategies.builder()
 //                .encoders(encoders -> encoders.add(new Jackson2CborEncoder()))
 //                .decoders(decoders -> decoders.add(new Jackson2CborDecoder()))
@@ -47,7 +47,7 @@ public class MyManagedChannel {
 
         RSocketRequester requester = RSocketRequester.builder()
                 .rsocketStrategies(strategies)
-                .tcp("localhost", 9899);
+                .tcp(address, 9899);
 
         return requester;
     }
@@ -56,12 +56,12 @@ public class MyManagedChannel {
      * 配置RSocket连接策略
      */
     @Bean
-    public Mono<RSocketRequester> getRSocketRequesters(RSocketRequester.Builder builder){
+    public Mono<RSocketRequester> getRSocketRequesters(RSocketRequester.Builder builder) {
         return Mono.just(
                 builder.rsocketConnector(rSocketConnector -> rSocketConnector.reconnect(
                                 Retry.fixedDelay(2, Duration.ofSeconds(2))))
                         .dataMimeType(MediaType.APPLICATION_CBOR)
-                        .transport(TcpClientTransport.create(9899))
+                        .transport(TcpClientTransport.create(address, 9899))
         );
     }
 

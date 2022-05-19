@@ -125,7 +125,7 @@ public class FileGrpcService {
         File serverFile = new File(path);
         FileInputStream fileInputStream = new FileInputStream(serverFile);
         int length=0;
-        byte[] buffer = new byte[1000*1000*8];//grpc限制数据大小最大4m
+        byte[] buffer = new byte[1000*1000*32];//grpc限制数据大小最大4m
         while ((length = fileInputStream.read(buffer)) != -1) {
             UploadFileRequest requestParam = UploadFileRequest.newBuilder()
                 .setFileName(name)
